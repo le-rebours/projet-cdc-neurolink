@@ -5,7 +5,7 @@ Support de l'épreuve E6
 
 ---
 
-> [!info] Comment lire ce document
+> [!INFO] Comment lire ce document
 > Ce document est votre dossier de démarrage. Il décrit le contexte, le métier de la clinique, les contraintes techniques imposées et le contrat de l'API que vous allez consommer. **Il ne contient ni modèle de données, ni algorithmes, ni architecture applicative détaillée.** C'est *votre* travail : concevoir, justifier et faire valider.
 >
 > Le client est disponible en revue de jalon pour lever les ambiguïtés.
