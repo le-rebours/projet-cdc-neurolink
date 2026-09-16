@@ -5,7 +5,8 @@ Support de l'épreuve E6
 
 ---
 
-> [!CAUTION] Comment lire ce document
+> [!NOTE]
+> **Comment lire ce document** \
 > Ce document est votre dossier de démarrage. Il décrit le contexte, le métier de la clinique, les contraintes techniques imposées et le contrat de l'API que vous allez consommer. **Il ne contient ni modèle de données, ni algorithmes, ni architecture applicative détaillée.** C'est *votre* travail : concevoir, justifier et faire valider.
 >
 > Le client est disponible en revue de jalon pour lever les ambiguïtés.
@@ -39,7 +40,8 @@ Les implants ne sont pas fabriqués par la clinique. Ils sont conçus par la mai
 
 Le système d'information de la clinique tient dans un **tableur partagé**, un **agenda mural** et la **mémoire de trois personnes**. Les données des capteurs sont consultées manuellement, quand quelqu'un y pense — c'est-à-dire quand un patient appelle parce qu'il souffre, avec plusieurs semaines de retard sur les signaux qui auraient permis de l'anticiper.
 
-> [!danger] Constat
+> [!WARNING]
+> **Constat** : 
 > La direction a décidé de **tout refondre**. C'est votre mission.
 
 ### 1.3 Ce qu'on vous demande
@@ -94,7 +96,8 @@ flowchart LR
 5. Après l'intervention, il consulte son dossier médical : implants portés, historique des interventions, comptes rendus, prochains rendez-vous.
 
 
-> [!warning] Archivage
+> [!WARNING]
+> **Archivage** \
 > Un patient peut cesser de fréquenter la clinique (déménagement, changement d'établissement). **Son dossier ne disparaît pas** : les comptes rendus d'intervention sont des documents médico-légaux, conservés bien après le départ du patient. La question posée en cas de litige est toujours *« à quel moment saviez-vous »*, et il faut pouvoir y répondre.
 
 ### 2.3 Le bloc opératoire
@@ -111,7 +114,8 @@ La clinique dispose de **plusieurs salles d'opération**. La planification est u
 | **Habilitation** | Chaque chirurgien est habilité à certaines **familles d'implants** seulement — c'est une responsabilité pénale |
 
 
-> [!danger] Règle critique
+> [!CAUTION]
+> **Règle critique** \
 > Un système qui permettrait d'affecter un chirurgien à une pose hors de son périmètre d'habilitation serait **dangereux**. Le premier réflexe du chef de bloc sera d'essayer de le prendre en défaut sur ce point.
 
 Les chirurgiens déclarent également leurs **indisponibilités** : congés, astreintes, formations.
@@ -125,7 +129,8 @@ Une **intervention** est un acte chirurgical — pose, révision ou explantation
 - Une salle
 - Un créneau daté
 
-> [!tip] Priorité fonctionnelle
+> [!NOTE]
+> **Priorité fonctionnelle** \
 > Le besoin exprimé par le bloc est double, avec un ordre de priorité explicite :
 > 1. **D'abord** : que le système **empêche** de planifier une intervention impossible.
 > 2. **Ensuite** : qu'il fasse gagner du temps en proposant les créneaux réalisables à partir d'un patient, d'un type d'implant et d'une fenêtre de dates.
@@ -155,7 +160,8 @@ Le catalogue change **une fois par trimestre**. Seul l'**administrateur** pourra
 
 ## Partie 3 — Les règles de gestion
 
-> [!important] Consigne
+> [!CAUTION]
+> **Consigne** : \
 > Le texte qui suit décrit le fonctionnement attendu du système. Il contient l'ensemble des règles de gestion à respecter. **Votre premier livrable de conception consiste à les identifier, les formuler, les numéroter et les faire valider.** Lisez-le stylo en main : chaque contrainte, chaque interdiction, chaque « jamais » est une règle.
 
 ### 3.1 Qui accède à quoi
@@ -258,7 +264,8 @@ graph TD
 | **Base de données** | MySQL 8 **ou** MariaDB 10.1+, instance unique partagée |
 | **Versionnement** | Git, dépôt distant, **une branche par fonctionnalité** |
 
-> [!info] Libertés de choix
+> [!NOTE]
+> **Libertés de choix** \
 > Le reste est libre : bibliothèque d'accès aux données côté Java, framework CSS, stratégie de tests, ordonnancement de la collecte. Ces choix seront à **justifier** dans votre dossier technique.
 
 ---
