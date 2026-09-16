@@ -93,6 +93,7 @@ flowchart LR
 4. Le patient suit l'avancement de sa demande depuis son espace.
 5. Après l'intervention, il consulte son dossier médical : implants portés, historique des interventions, comptes rendus, prochains rendez-vous.
 
+
 > [!warning] Archivage
 > Un patient peut cesser de fréquenter la clinique (déménagement, changement d'établissement). **Son dossier ne disparaît pas** : les comptes rendus d'intervention sont des documents médico-légaux, conservés bien après le départ du patient. La question posée en cas de litige est toujours *« à quel moment saviez-vous »*, et il faut pouvoir y répondre.
 
@@ -108,6 +109,7 @@ La clinique dispose de **plusieurs salles d'opération**. La planification est u
 | **Remise en état** | Après chaque intervention, la salle est indisponible **1 heure** (décontamination, réarmement) |
 | **Disponibilité chirurgien** | Un chirurgien est à un endroit à la fois ; congés et astreintes = pas d'opération |
 | **Habilitation** | Chaque chirurgien est habilité à certaines **familles d'implants** seulement — c'est une responsabilité pénale |
+
 
 > [!danger] Règle critique
 > Un système qui permettrait d'affecter un chirurgien à une pose hors de son périmètre d'habilitation serait **dangereux**. Le premier réflexe du chef de bloc sera d'essayer de le prendre en défaut sur ce point.
