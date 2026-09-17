@@ -175,7 +175,8 @@ Le système est utilisé par **quatre profils** qui ne se recouvrent pas :
 | **Personnel administratif** | Gestion des rendez-vous, fiches patients, salles — **pas** d'accès au contenu médical |
 | **Administrateurs** | Gestion des comptes, synchronisation catalogue |
 
-> [!warning] Règles d'accès
+> [!WARNING]
+> **Règles d'accès**
 > - Chacun dispose d'un **compte unique** associé à un **profil unique** — on n'est pas médecin *et* patient à la fois.
 > - Le cloisonnement des accès est une **exigence médico-légale**, pas une commodité d'interface.
 > - Un compte se **verrouille après 5 échecs d'authentification** consécutifs.
