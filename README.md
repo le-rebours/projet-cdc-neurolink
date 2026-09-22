@@ -269,6 +269,69 @@ graph TD
 > **Libertés de choix** \
 > Le reste est libre : bibliothèque d'accès aux données côté Java, framework CSS, stratégie de tests, ordonnancement de la collecte. Ces choix seront à **justifier** dans votre dossier technique.
 
+### 4.3 Environnement technique imposé 
+
+#### Axe 1 : Architecture réseau et cloisonnement
+
+**Objectifs**
+– Séparer le réseau en zones isolées : le site Web public (Symfony), les postes internes (JavaFX) et le serveur de base de données (MariaDB).
+– Protéger les connexions entrantes depuis l'extérieur et permettre aux médecins d'astreinte de se connecter à distance de façon sécurisée.
+
+**Livrables**
+– Schéma réseau : plan d'adressage IP, VLANs, DMZ et règles de filtrage entre les zones.
+– Pare-feu opérationnel : pare-feu / WAF (ex. pfSense, Nginx) filtrant le trafic HTTPS vers le site.
+
+#### Axe 2 : Continuité de service et sauvegardes de la base de données
+
+**Objectifs**
+– Éviter que la panne d'un seul serveur bloque la planification des blocs opératoires.
+– Sauvegarder et archiver de façon chiffrée les dossiers patients et les comptes rendus pendant la durée légale de conservation.
+
+**Livrables**
+– Base de données redondante : plusieurs serveurs MariaDB (ex. cluster Galera à 3 nœuds, ou serveur principal et serveur de secours avec bascule automatique via Keepalived).
+– Sauvegardes automatisées : scripts sauvegardant la base sans interruption de service, avec chiffrement des copies et garantie d'intégrité dans le temps.
+– Plan de reprise d'activité (PRA) : procédure de restauration testée par une simulation de panne du serveur principal.
+
+
+#### Axe 3 : Sécurité des accès et durcissement
+
+**Objectifs**
+– Garantir que chacun des 4 profils (patients, médecins, personnel administratif, administrateurs) n'accède qu'aux données qui le concernent.
+– Bloquer automatiquement un compte après 5 échecs d'authentification consécutifs.
+
+**Livrables**
+– Annuaire des utilisateurs : LDAP / Active Directory ou base d'authentification sécurisée, avec des droits définis par profil.
+– Blocage après 5 échecs : règle configurée via PAM, Fail2ban ou GPO.
+– Rapport de durcissement : document détaillant la désactivation des services inutiles, la restriction des privilèges et la sécurisation des systèmes.
+
+#### Axe 4 : Traçabilité, détection d'attaques et supervision
+
+**Objectifs**
+– Centraliser l'ensemble des journaux afin de pouvoir prouver, en cas de litige, qui a consulté quel dossier et à quel moment.
+– Surveiller en temps réel l'état des serveurs et le bon fonctionnement des échanges avec l'API NeuroLink Corp.
+
+**Livrables**
+– Serveur de logs : plateforme de collecte et d'indexation des journaux (ex. ELK, Graylog, Syslog-ng).
+– Tableaux de bord : outil de supervision (Zabbix, Grafana) affichant la charge des serveurs, les temps de réponse de la base et l'état du service API.
+– Alertes automatiques : notifications en cas de tentative d'intrusion, de saturation d'un service ou d'échecs de connexion répétés.
+
+
+#### Axe 5 : Automatisation des déploiements
+
+> [!NOTE]
+> **Optionnel** \
+> Cette partie est le niveau licence, c'est une option sur vous avez finalisé les axes 1 à 4
+
+**Objectifs**
+– Automatiser l'installation du site Web Symfony, de l'application JavaFX sur les postes et du service chargé d'interroger l'API NeuroLink Corp.
+– Pouvoir redéployer rapidement chaque nouvelle version (V1, V2, version finale).
+
+**Livrables**
+– Service de collecte API : programme fonctionnant en continu et redémarrant automatiquement (conteneur Docker/Podman ou service systemd), avec les clés d'API stockées dans un coffre-fort de secrets (ex. HashiCorp Vault).
+– Scripts d'installation automatisée : playbooks Ansible ou équivalent pour installer et configurer les serveurs.
+– Pipeline CI/CD : chaîne automatisée (ex. GitLab CI, GitHub Actions) pour tester et mettre en production chaque nouvelle version.
+
+
 ---
 
 ## Partie 5 — Périmètre fonctionnel attendu
@@ -317,10 +380,14 @@ Cette partie liste **ce qui est attendu**, pas comment le faire.
 | Date | Version | Contenus |
 |------|---------|----------|
 | **02/11/2026** | **V1 Java** | Authentification Admin et Administratif, CRUD Personnel administratif, synchronisation, CRUD des salles |
+| **02/11/2026** | **V1 Web** | Axe 1 : Architecture réseau et cloisonnement  |
 | **09/11/2026** | **V1 Web** | Authentification Patient et Médecin, Espace Patient |
+| **09/11/2026** | **V1 Web** | Axe 3 : Sécurité des accès et durcissement  |
 | **07/12/2026** | **V2 Java** | Gestion de la demande, création de l'intervention |
 | **14/12/2026** | **V2 Web** | Espace Médecin |
+| **14/12/2026** | **V2 Web** | Axe 4 : Traçabilité, détection d'attaques et supervision |
 | **22/02/2027** | **Version Finale** | Web et Java finalisés |
+| **22/02/2027** | **Version Finale** | Axe 2 : Continuité de service et sauvegardes de la base de données |
 
 ---
 
