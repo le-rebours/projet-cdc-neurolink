@@ -334,9 +334,10 @@ graph TD
 
 ---
 
-## Partie 5 — Périmètre fonctionnel attendu
+## Partie 5 — Périmètre attendu
 
-Cette partie liste **ce qui est attendu**, pas comment le faire.
+> [!WARNING]
+> Cette partie liste **ce qui est attendu**, pas comment le faire.
 
 ### 5.1 Poste clinique — Java / JavaFX
 
@@ -372,6 +373,20 @@ Cette partie liste **ce qui est attendu**, pas comment le faire.
 | | Fiche de suivi patient consolidée, avec notes datées |
 | | Gestion de ses habilitations au niveau famille d'implants |
 | | Gestion de ses indisponibilités |
+
+
+### 5.3 Environnement technique
+
+| Module | Environnement |
+|--------|----------------|
+| **Axe 1** | Architecture réseau et cloisonnement |
+| | Hyperviseur : proxmox |
+| | Firewall : pfSense |
+| | WAF : bunkerweb |
+| | Serveur WEB : apache, ngnix, caddy ou frankenphp |
+| | Base de donnée : MariaDB |
+| **Axe 3** | Continuité de service et sauvegardes de la base de données |
+| | Agrégation de lien, Trunk |
 
 ---
 
