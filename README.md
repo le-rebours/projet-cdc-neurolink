@@ -408,7 +408,7 @@ graph TD
 
 # Groupes étudiants
 
-| Groupe | Étudiant 1 | Étudiant 2 (SISR) | Étudiant 3 | Étudiant 4 |
+| Groupe | Étudiant 1 | Étudiant 2 | Étudiant 3 | Étudiant 4 |
 | --- | --- | --- | --- | --- |
 | 1 | FROMONT Sacha | GERNIGON Romain | | |
 | 2 | TOREVA Luca | GLEIZES Alexandre | GRATELOUBE Simon | DANGUIS Tom |
@@ -421,16 +421,3 @@ graph TD
 | 9 | BAROLIN-MARSOLLE Thomas | BOUTAKHEDMIT Mohand tahar | CHAUHDRY Laiba | |
 
 
----
-
-## Partie 7 — Organisation, jalons, évaluation
-
-> À compléter par l'équipe pédagogique.
-
----
-
-## Partie 8 — Vos premiers pas
-
-> À compléter — suggestions pour démarrer la phase de conception.
-
----
