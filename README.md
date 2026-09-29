@@ -418,6 +418,6 @@ graph TD
 | 6 | [WEB](https://github.com/Amn-7k/2026-NEUROLINK-WEB-GRP6) | JAVA |  AIT DIB Rayane | ABDELJALIL Amine | FONT-Y-RADUA Maxime | |
 | 7 | WEB | [JAVA](https://github.com/Bakaryndi94/2026-NEUROLINK-JAVA-GRP7) |  MILONGO Irna | NDIAYE Bakary | OLAYODE Ilerioluwa | |
 | 8 | [WEB](https://github.com/jsm-0/2026-NEUROLINK-WEB-GR8) | JAVA |  ZIZANI Mohamed | BAC Raphaël | ADOUWEKONOU Jasmine | |
-| 9 | WEB | JAVA |  BAROLIN-MARSOLLE Thomas | BOUTAKHEDMIT Mohand tahar | CHAUHDRY Laiba | |
+| 9 | [WEB](https://github.com/Tahar935/2026-NEUROLINK-WEB-GR9) | JAVA |  BAROLIN-MARSOLLE Thomas | BOUTAKHEDMIT Mohand tahar | CHAUHDRY Laiba | |
 
 
