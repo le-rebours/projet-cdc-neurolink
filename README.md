@@ -416,7 +416,7 @@ graph TD
 | 4 | WEB | JAVA |  YURUK Ismail | NOUBISIE Daniella | DIXNEUF Ian | |
 | 5 | WEB | [JAVA](https://github.com/Khaled-FFI/2026-NEUROLINK-JAVA-GR5) |  ASTIER Yanis | KAMARA ODUWARE Nandy | AFIFI Khaled | REATE Kelyan |
 | 6 | [WEB](https://github.com/Amn-7k/2026-NEUROLINK-WEB-GRP6) | JAVA |  AIT DIB Rayane | ABDELJALIL Amine | FONT-Y-RADUA Maxime | |
-| 7 | WEB | [JAVA](https://github.com/Bakaryndi94/2026-NEUROLINK-JAVA-GRP7) |  MILONGO Irna | NDIAYE Bakary | OLAYODE Ilerioluwa | |
+| 7 | [WEB](https://github.com/Bakaryndi94/2026-NEUROLINK-WEB-GRP7) | [JAVA](https://github.com/Bakaryndi94/2026-NEUROLINK-JAVA-GRP7) |  MILONGO Irna | NDIAYE Bakary | OLAYODE Ilerioluwa | |
 | 8 | [WEB](https://github.com/jsm-0/2026-NEUROLINK-WEB-GR8) | JAVA |  ZIZANI Mohamed | BAC Raphaël | ADOUWEKONOU Jasmine | |
 | 9 | [WEB](https://github.com/Tahar935/2026-NEUROLINK-WEB-GR9) | JAVA |  BAROLIN-MARSOLLE Thomas | BOUTAKHEDMIT Mohand tahar | CHAUHDRY Laiba | |
 
