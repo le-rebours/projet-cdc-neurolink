@@ -408,16 +408,16 @@ graph TD
 
 # Groupes étudiants
 
-| Groupe | Étudiant 1 | Étudiant 2 | Étudiant 3 | Étudiant 4 |
-| --- | --- | --- | --- | --- |
-| 1 | FROMONT Sacha | GERNIGON Romain | | |
-| 2 | TOREVA Luca | GLEIZES Alexandre | GRATELOUBE Simon | DANGUIS Tom |
-| 3 | DIAKITE Abdoulaye | NGANGUE-MICHON Jules | VIEIRA Liam | ZHOU Christophe |
-| 4 | YURUK Ismail | NOUBISIE Daniella | DIXNEUF Ian | |
-| 5 | ASTIER Yanis | KAMARA ODUWARE Nandy | AFIFI Khaled | REATE Kelyan |
-| 6 | AIT DIB Rayane | ABDELJALIL Amine | FONT-Y-RADUA Maxime | |
-| 7 | MILONGO Irna | NDIAYE Bakary | OLAYODE Ilerioluwa | |
-| 8 | ZIZANI Mohamed | BAC Raphaël | ADOUWEKONOU Jasmine | |
-| 9 | BAROLIN-MARSOLLE Thomas | BOUTAKHEDMIT Mohand tahar | CHAUHDRY Laiba | |
+| Groupe | WEB | JAVA | Étudiant 1 | Étudiant 2 | Étudiant 3 | Étudiant 4 |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | WEB | JAVA |  FROMONT Sacha | GERNIGON Romain | | |
+| 2 | WEB | JAVA |  TOREVA Luca | GLEIZES Alexandre | GRATELOUBE Simon | DANGUIS Tom |
+| 3 | WEB | JAVA |  DIAKITE Abdoulaye | NGANGUE-MICHON Jules | VIEIRA Liam | ZHOU Christophe |
+| 4 | WEB | JAVA |  YURUK Ismail | NOUBISIE Daniella | DIXNEUF Ian | |
+| 5 | WEB | JAVA |  ASTIER Yanis | KAMARA ODUWARE Nandy | AFIFI Khaled | REATE Kelyan |
+| 6 | WEB | JAVA |  AIT DIB Rayane | ABDELJALIL Amine | FONT-Y-RADUA Maxime | |
+| 7 | WEB | JAVA |  MILONGO Irna | NDIAYE Bakary | OLAYODE Ilerioluwa | |
+| 8 | WEB | JAVA |  ZIZANI Mohamed | BAC Raphaël | ADOUWEKONOU Jasmine | |
+| 9 | WEB | JAVA |  BAROLIN-MARSOLLE Thomas | BOUTAKHEDMIT Mohand tahar | CHAUHDRY Laiba | |
 
 
