@@ -36,6 +36,11 @@ Nous sommes dans une mégapole où l'augmentation cybernétique est devenue un a
 
 Les implants ne sont pas fabriqués par la clinique. Ils sont conçus par la maison mère, **NeuroLink Corp**, qui maintient le catalogue et collecte les données des capteurs embarqués dans chaque implant posé. Ces données sont mises à disposition des cliniques par une API.
 
+> [!INFO]
+> **API NEUROLINK** : 
+> API est disponible sous docker via le repository https://github.com/studoo-app/NeuroLink-API
+
+
 ### 1.2 La situation actuelle
 
 Le système d'information de la clinique tient dans un **tableur partagé**, un **agenda mural** et la **mémoire de trois personnes**. Les données des capteurs sont consultées manuellement, quand quelqu'un y pense — c'est-à-dire quand un patient appelle parce qu'il souffre, avec plusieurs semaines de retard sur les signaux qui auraient permis de l'anticiper.
