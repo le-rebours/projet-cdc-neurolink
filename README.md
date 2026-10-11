@@ -36,7 +36,7 @@ Nous sommes dans une mégapole où l'augmentation cybernétique est devenue un a
 
 Les implants ne sont pas fabriqués par la clinique. Ils sont conçus par la maison mère, **NeuroLink Corp**, qui maintient le catalogue et collecte les données des capteurs embarqués dans chaque implant posé. Ces données sont mises à disposition des cliniques par une API.
 
-> [!INFO]
+> [!NOTE]
 > **API NEUROLINK** : 
 > API est disponible sous docker via le repository https://github.com/studoo-app/NeuroLink-API
 
