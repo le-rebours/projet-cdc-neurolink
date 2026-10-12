@@ -419,7 +419,7 @@ graph TD
 | 2 | [WEB](https://github.com/Flyscream/2026-NEUROLINK-WEB-GR2) | [JAVA](https://github.com/Flyscream/2026-NEUROLINK-JAVA-GR2) |  TOREVA Luca | GLEIZES Alexandre | GRATELOUBE Simon | DANGUIS Tom |
 | 3 | [WEB](https://github.com/liamvieira6-spec/2026-NEUROLINK-WEB-GR3) | [JAVA](https://github.com/liamvieira6-spec/2026-NEUROLINK-JAVA-GR3) |  DIAKITE Abdoulaye | NGANGUE-MICHON Jules | VIEIRA Liam | ZHOU Christophe |
 | 4 | [WEB](https://github.com/Ian-Dixneuf/2026-NEUROLINK-WEB-GR4) | [JAVA](https://github.com/Ian-Dixneuf/2026-NEUROLINK-JAVA-GR4) |  YURUK Ismail | NOUBISIE Daniella | DIXNEUF Ian | |
-| 5 | WEB | [JAVA](https://github.com/Khaled-FFI/2026-NEUROLINK-JAVA-GR5) |  ASTIER Yanis | KAMARA ODUWARE Nandy | AFIFI Khaled | REATE Kelyan |
+| 5 | [WEB](https://github.com/Khaled-FFI/2026-NEUROLINK-WEB-GR5) | [JAVA](https://github.com/Khaled-FFI/2026-NEUROLINK-JAVA-GR5) |  ASTIER Yanis | KAMARA ODUWARE Nandy | AFIFI Khaled | REATE Kelyan |
 | 6 | [WEB](https://github.com/Amn-7k/2026-NEUROLINK-WEB-GRP6) | [JAVA](https://github.com/Amn-7k/2026-NEUROLINK-JAVA-GRP6) |  AIT DIB Rayane | ABDELJALIL Amine | FONT-Y-RADUA Maxime | |
 | 7 | [WEB](https://github.com/Bakaryndi94/2026-NEUROLINK-WEB-GRP7) | [JAVA](https://github.com/Bakaryndi94/2026-NEUROLINK-JAVA-GRP7) |  MILONGO Irna | NDIAYE Bakary | OLAYODE Ilerioluwa | |
 | 8 | [WEB](https://github.com/jsm-0/2026-NEUROLINK-WEB-GR8) | [JAVA](https://github.com/jsm-0/2026-NEUROLINK-JAVA-GR8) |  ZIZANI Mohamed | BAC Raphaël | ADOUWEKONOU Jasmine | |
