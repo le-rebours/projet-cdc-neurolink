@@ -392,6 +392,14 @@ graph TD
 | | Base de donnée : MariaDB |
 | **Axe 3** | Continuité de service et sauvegardes de la base de données |
 | | Agrégation de lien, Trunk |
+<!--markoo:callout WARNING-->
+> [!WARNING]
+> **Documentation technique** \
+> L'équipe infrastructure doit rédiger l'intégralité de sa documentation au format **Markdown**, dans un répertoire **`/documentation`** à la racine du projet. Celle-ci doit être **organisée et structurée** : un fichier `INDEX.md` à la racine du répertoire, qui référence chaque document, et des **sous-répertoires** thématiques (réseau, sécurité, sauvegardes, supervision, déploiement). Un document non référencé dans l'`INDEX` est un document introuvable — donc inexistant.
+>
+> Les **images**, **captures d'écran** et **schémas** font partie intégrante des notes : ils sont intégrés dans les documents Markdown (liens relatifs vers les fichiers, blocs `mermaid`, sources draw.io ou Excalidraw), jamais livrés en pièces jointes séparées ou dans une archive. Un schéma sans sa note d'accompagnement — ou l'inverse — n'est pas un livrable.
+>
+> Pour la rédaction, vous pouvez vous aider d'éditeurs Markdown : **Obsidian** (graphe de liens, aperçu des `mermaid`, export), **Zed**, VS Code ou tout autre éditeur de votre choix. L'outil est libre — le format de sortie, lui, ne l'est pas.
 
 ---
 
