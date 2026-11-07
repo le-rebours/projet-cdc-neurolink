@@ -274,6 +274,144 @@ graph TD
 > **Libertés de choix** \
 > Le reste est libre : bibliothèque d'accès aux données côté Java, framework CSS, stratégie de tests, ordonnancement de la collecte. Ces choix seront à **justifier** dans votre dossier technique.
 
+> [!warning] Le respect des conventions
+> **Un dépôt non conventionné est un dépôt illisible : il sera relevé en revue de jalon.**
+>
+> Premièrement, il est crucial d'adopter des conventions de nommage claires pour les commits et les pull requests afin de faciliter la collaboration. La norme Conventional Commits (disponible à l'adresse https://www.conventionalcommits.org/fr/v1.0.0/) constitue une base solide, que vous pouvez adapter selon vos besoins. À l'avenir, évitez les libellés imprécis tels que « Dépôt 1 » ou « Test ».
+>
+> Par ailleurs, la documentation doit être rédigée en Markdown pour garantir une accessibilité et une maintenance simplifiées. Chaque projet devra comporter :
+> - un fichier CHANGELOG respectant les conventions définies par Keep a Changelog (https://keepachangelog.com/fr/1.1.0/) et la nomenclature SemVer (https://semver.org/) ;
+> - un fichier README présentant succinctement le projet ;
+> - un INDEX dans le dossier /documentation, centralisant l'ensemble des documentations techniques.
+>
+> #### A. Commits — Conventional Commits 1.0.0
+>
+> Format obligatoire : `<type>(<scope>): <description>` — type et description en minuscules, description à l'impératif, sans point final, ~50 caractères ; corps facultatif séparé par une ligne vide, footers `Clé: valeur` (`BREAKING CHANGE:`, `Fixes #12`).
+>
+> | Type | Usage | Effet SemVer |
+> |------|-------|--------------|
+> | `feat` | nouvelle fonctionnalité | **MINEUR** (Y) |
+> | `fix` | correction de bug | **CORRECTIF** (Z) |
+> | `docs` | documentation uniquement | aucun |
+> | `style` | formatage, sans changement de sens | aucun |
+> | `refactor` | réécriture sans changement de comportement | aucun |
+> | `perf` | amélioration de performance | CORRECTIF |
+> | `test` | ajout / modification de tests | aucun |
+> | `build` | compilation, dépendances, image Docker | aucun |
+> | `ci` | configuration et scripts de pipeline | aucun |
+> | `chore` | maintenance diverses | aucun |
+> | `revert` | annulation d'un commit précédent | selon le commit annulé |
+>
+> Le `scope` est recommandé et circonscrit la zone touchée : `auth`, `patient`, `rdv`, `planning`, `catalogue`, `api`, `db`, `web`, `java`, `infra`.
+> Une rupture de compatibilité se déclare par `!` (`feat(api)!:`) **ou** un footer `BREAKING CHANGE:` → incrément **MAJEUR** (X).
+>
+> ```text
+> feat(patient): ajoute la recherche multicritère des fiches patients
+> fix(planning): refuse une salle en remise en état
+> docs(reseau): ajoute le plan d'adressage VLAN
+> feat(api)!: change le format de synchronisation du catalogue
+> ```
+>
+> **Interdits** : `update`, `maj`, `wip`, `test`, `Dépôt 1`, un message vide, un message sans type, le passé composé (« ajouté »), la première personne, le point final.
+> **Outillage attendu** : la convention n'est effective que si elle est *vérifiée* — hook `commit-msg` ou `commitlint` (avec `@commitlint/config-conventional`), et un gabarit de pull request.
+>
+> #### B. Branches et pull requests
+>
+> - **Une branche par fonctionnalité**, jamais de travail direct sur `main` (la branche par défaut est protégée : pas de push direct, merge par PR uniquement).
+> - Nommage : `<type>/<scope>-<sujet-court>` en minuscules, séparé par des tirets.
+>
+> ```text
+> feat/planning-recherche-creneaux
+> fix/auth-verrouillage-5-echecs
+> docs/infra-pra-restauration
+> ```
+>
+> - **Nom de PR** : identique au commit principal (`feat(planning): recherche de créneaux réalisables`). Un titre de PR « Dépôt 1 », « Test » ou « modif » est refusé.
+> - **Corps de PR** : *Contexte* (lien vers la règle de gestion ou l'issue), *Ce qui change*, *Comment tester*, *Captures* si l'interface est concernée, `Closes #<numéro>`.
+> - Une PR = un sujet. Pas de mélange documentaire / fonctionnel / refactorisation dans la même PR.
+> - **Une relecture** au minimum par un autre membre du groupe avant fusion (squash merge au message conventionnel).
+>
+> #### C. Versionnement — SemVer 2.0.0
+>
+> Format `MAJEUR.MINEUR.CORRECTIF` (`X.Y.Z`), préfixé `v` pour les tags Git (`v1.0.0`).
+>
+> | Incrément | Déclencheur | Exemple |
+> |-----------|-------------|---------|
+> | **MAJEUR** | rupture de compatibilité (API, modèle de données, contrat) | `1.2.3` → `2.0.0` |
+> | **MINEUR** | nouvelle fonctionnalité compatible | `1.2.3` → `1.3.0` |
+> | **CORRECTIF** | correction rétrocompatible | `1.2.3` → `1.2.4` |
+>
+> Une version publiée est **immuable** : on n'écrase jamais un tag, on en crée un nouveau. Les jalons du projet sont les tags de référence : `v1.0.0` (V1), `v2.0.0` (V2), `v3.0.0` (version finale). Une pré-version se note `v2.0.0-rc.1`.
+>
+> #### D. CHANGELOG — Keep a Changelog 1.1.0
+>
+> Fichier `CHANGELOG.md` à la racine de **chaque** dépôt (WEB et JAVA), versionné avec le code, écrit **pour les humains** et non généré à l'aveugle depuis `git log`.
+>
+> - Une section par version, **la plus récente en tête**, titre `## [X.Y.Z] - YYYY-MM-DD` ;
+> - une section `## [Unreleased]` en tête pour les changements en cours ;
+> - les changements regroupés par nature, dans cet ordre : `Added`, `Changed`, `Deprecated`, `Removed`, `Fixed`, `Security` ;
+> - le projet déclare explicitement qu'il suit le SemVer ;
+> - les entrées vides sont supprimées ; les liens vers issues et PR sont encouragés.
+>
+> ```markdown
+> # Changelog
+>
+> Toutes les modifications notables de ce projet sont documentées dans ce fichier.
+> Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/)
+> et ce projet adhère au [Semantic Versioning](https://semver.org/).
+>
+> ## [Unreleased]
+>
+> ### Added
+> - Recherche assistée de créneaux réalisables
+>
+> ## [1.0.0] - 2026-11-02
+>
+> ### Added
+> - Authentification administrateur et administratif, verrouillage après 5 échecs
+> - CRUD du personnel administratif et des salles
+> - Synchronisation du catalogue avec l'API NeuroLink Corp
+> ```
+>
+> #### E. README
+>
+> Fichier `README.md` à la racine de **chaque** dépôt, court et opérationnel : présentation du projet en quelques lignes, binôme/groupe, stack et prérequis, installation et lancement, variables d'environnement (sans secret), arborescence, lien vers `/documentation/INDEX.md`, lien vers le `CHANGELOG.md`, licence ou mention de confidentialité.
+> Le README ne remplace pas la documentation technique : il y renvoie.
+>
+> #### F. Documentation — `/documentation` et `INDEX.md`
+>
+> Tout est en Markdown, dans le dépôt **WEB** du groupe, jamais dans le dépôt JAVA.
+>
+> ```text
+> documentation/
+> ├── INDEX.md              ← point d'entrée unique, référence chaque document
+> ├── 00-administration/
+> ├── 01-infrastructure/    ← plan d'adressage, VLAN, vSwitch Proxmox
+> ├── 02-securite/          ← pare-feu, WAF, durcissement, LDAP
+> ├── 03-sauvegardes/       ← redondance, chiffrement, PRA
+> ├── 04-supervision/       ← logs, métriques, alertes
+> ├── 05-deploiement/       ← Ansible, CI/CD, conteneurs
+> └── Media/                ← images et schémas exportés, référencés en relatif
+> ```
+>
+> - **Nommage** : sous-répertoires numérotés `NN-thème/`, fichiers en minuscules séparés par des tirets (`plan-adressage-vlan.md`), jamais d'espace ni d'accent dans le nom de fichier.
+> - **En-tête** de chaque document : titre, objectif, périmètre, auteur, date de mise à jour, version.
+> - **`INDEX.md`** : tableau `Document | Thème | Version | Dernière mise à jour | Responsable`, une ligne par fichier. Un document non référencé dans l'`INDEX` est introuvable — donc inexistant.
+> - **Schémas et captures** : intégrés dans le Markdown (lien relatif, bloc `mermaid`, source Excalidraw/draw.io), jamais en archive séparée. Un schéma sans sa note d'accompagnement — ou l'inverse — n'est pas un livrable.
+> - **Fraîcheur** : toute évolution de l'infrastructure met à jour le document concerné, l'`INDEX` et le `CHANGELOG.md`.
+>
+> #### G. Ce qui est relevé en revue de jalon
+>
+> | Contrôle | Attendu |
+> |----------|---------|
+> | Historique Git | 100 % des commits conformes ; aucun commit « wip », « test », « maj » |
+> | Branches | une branche par fonctionnalité, `main` protégée, PR relues |
+> | Tags | `v1.0.0`, `v2.0.0`, `v3.0.0` posés aux jalons, jamais réécrits |
+> | CHANGELOG | présent dans les deux dépôts, à jour à chaque jalon, catégories Keep a Changelog |
+> | README | présent, installation reproductible par un tiers |
+> | `/documentation` | `INDEX.md` exhaustif, arborescence thématique, schémas intégrés |
+>
+
 ### 4.3 Environnement technique imposé 
 
 #### Axe 1 : Architecture réseau et cloisonnement
