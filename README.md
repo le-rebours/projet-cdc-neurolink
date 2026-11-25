@@ -1,6 +1,6 @@
 # NeuroLink Clinic
 
-**Projet de développement — BTS SIO 2 option SLAM · Session 2026-2027**  
+**Projet de développement — BTS SIO 2 · Session 2026-2027**  
 Support de l'épreuve E6
 
 ---
